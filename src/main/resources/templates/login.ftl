@@ -1,7 +1,7 @@
 <#import "parts/common.ftl" as c>
 <#import "parts/login.ftl" as l>
 <@c.page>
-<h3 class="invalid feedback" id="error"></h3>
+<h3 id="error"></h3>
 <script>
     var link = window.location.href;
     var error = '';
