@@ -91,6 +91,8 @@ public class MainController {
             messageRepository.save(message);
         }
 
+        model.addAttribute("message", null);
+
         Iterable<Message> messages =  messageRepository.findAll();
         model.addAttribute("messages", messages);
         /*model.put("filter", filter);*/

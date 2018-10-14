@@ -15,6 +15,7 @@ public class Message {
     @Length(max = 2048, message = "Message too long!!(more than 2 kB)")
     private String text;
 
+    @Length(max = 255, message = "Message too long!!(more than 255)")
     private String tag;
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
