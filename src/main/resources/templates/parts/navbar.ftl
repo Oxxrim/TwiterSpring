@@ -22,7 +22,7 @@
                 <a class="nav-link" href="/user">User List</a>
             </li>
             </#if>
-            <#if user??>
+            <#if name != "guest">
             <li>
                 <a class="nav-link" href="/user/profile">Profile</a>
             </li>
@@ -30,10 +30,10 @@
         </ul>
 
         <div class="navbar-text mr-3">${name}</div>
-        <#if <#--name != "unknown"-->user??>
+        <#if name != "guest">
         <@l.logout></@l.logout>
         </#if>
-        <#if !user??>
+        <#if name == "guest">
             <a href="/login"><button class="btn btn-primary">Login</button></a>
         </#if>
     </div>

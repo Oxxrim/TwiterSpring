@@ -1,10 +1,12 @@
 package org.itstep.controller;
 
+import org.itstep.domain.Role;
 import org.itstep.domain.User;
 import org.itstep.domain.dto.CaptchaResponseDto;
 import org.itstep.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
@@ -78,7 +80,11 @@ public class RegistrationController {
     }
 
     @GetMapping("activate/{code}")
-    public String activate(Model model, @PathVariable String code){
+    public String activate(Model model, @PathVariable String code, @AuthenticationPrincipal User user){
+
+        if(user != null && user.getRoles().contains(Role.USER)){
+            return "redirect:/";
+        }
 
         boolean isActivate = userService.activateUser(code);
 
