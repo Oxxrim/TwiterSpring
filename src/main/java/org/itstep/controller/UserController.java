@@ -2,14 +2,18 @@ package org.itstep.controller;
 
 import org.itstep.domain.Role;
 import org.itstep.domain.User;
+import org.itstep.repository.UserRepository;
 import org.itstep.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.Map;
 
 @Controller
@@ -18,6 +22,7 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+
 
     @PreAuthorize("hasAuthority('ADMIN')")
     @GetMapping
@@ -66,4 +71,6 @@ public class UserController {
 
         return "redirect:/user/profile";
     }
+
+
 }
