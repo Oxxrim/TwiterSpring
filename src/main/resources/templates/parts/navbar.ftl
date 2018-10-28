@@ -26,6 +26,9 @@
             <li>
                 <a class="nav-link" href="/user/profile">Profile</a>
             </li>
+            <li>
+                <a class="nav-link" href="/user-messages/${currentUserId}">My messages</a>
+            </li>
             </#if>
         </ul>
 
