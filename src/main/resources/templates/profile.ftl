@@ -16,7 +16,7 @@
                 <input type="email" name="email" class="form-control mb-2" placeholder="user@gmail.com" value="${email!''}"/>
             </div>
         </div>
-        <input type="hidden" name="_csrf" value="${_csrf.token}">
+        <input type="hidden" name="_csrf" value="${_csrf.token}"/>
         <br>
         <button type="submit" class="btn btn-primary mt-2">Save</button>
     </form>

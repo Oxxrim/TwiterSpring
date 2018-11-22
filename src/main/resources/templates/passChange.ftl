@@ -38,7 +38,7 @@
                 </#if>
             </div>
         </div>
-        <input type="hidden" name="_csrf" value="${_csrf.token}">
+        <input type="hidden" name="_csrf" value="${_csrf.token}"/>
         <br>
         <button type="submit" class="btn btn-primary mt-2">Change</button>
     </form>
